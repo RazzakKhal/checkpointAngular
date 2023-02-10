@@ -1,7 +1,8 @@
 <ul>
-  <li *ngFor="let charac of personnages">
-{{charac}}
-<button (click)="recupCitationPerso(charac)">Afficher une de mes citations</button>
+  <li *ngFor="let charac of personnages; let index = index">
+
+<img [src]="persoTof[index]" alt="">
+<button (click)="recupCitationPerso(charac)">{{charac}}</button>
   </li>
 </ul>
 

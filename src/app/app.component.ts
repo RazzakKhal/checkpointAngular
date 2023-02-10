@@ -9,6 +9,7 @@ export class AppComponent {
   title = 'checkpointAngular';
   personnages : any;
   citationPerso : any;
+  persoTof : any;
 
   constructor(){
     this.recupCitations();
@@ -26,12 +27,20 @@ export class AppComponent {
 
    let persos = data.map((quote : any) => quote.character);
 
+   // récupération des photos des perso
+
+   let photos = data.map((quote : any) => quote.image);
+
    // filtrage du tableau pour ne laisser qu'une occurence de chaque perso
 
    let persoFilter = persos.filter((charac : any, index : any) => persos.indexOf(charac) === index );
 console.log(persoFilter);
+
+let imageFilter = photos.filter((charac : any, index : any) => photos.indexOf(charac) === index );
+console.log(imageFilter);
    // recuperation des personnages pour les utiliser dans le HTML
    this.personnages = persoFilter;
+   this.persoTof = imageFilter;
   }
 
 
